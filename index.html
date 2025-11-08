@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>One Event Navbar</title>
+  <link rel="stylesheet" href="index.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body>
+  <script src="dropdown.js" defer></script>
+   <script src="dropdown1.js" defer></script>
+
+  <nav class="navbar navbar-expand-lg shadow-sm">
+    <div class="container">
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">
+        <img src="partyimages/navlogo.jpg" alt="One Event Logo">
+      </a>
+
+      <!-- Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Nav Links -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link active fw-bold" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="venue.html">Venue</a></li>
+          <li class="nav-item"><a class="nav-link" href="suppliers.html">Suppliers</a></li>
+          <li class="nav-item"><a class="nav-link" href="media.html">Media</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+          <li class="nav-item"><a class="nav-link" href="sign.html">Sign Up</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Your Wedding, Your Way</h1>
+    <div class="container search-box">
+      <div class="row justify-content-center g-2">
+       <div class="col-md-3 col-10">
+  <div id="category-select" class="select" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-controls="category-list-hero">
+    <button type="button" class="select__button" id="category-trigger-hero">Select Category</button>
+    <div class="select__panel" role="dialog" aria-modal="false">
+      <div class="select__header">Select Category</div>
+      <hr class="select__rule">
+      <ul class="select__list" id="category-list-hero" role="listbox" aria-labelledby="category-trigger-hero"></ul>
+    </div>
+  </div>
+</div>
+        <div class="col-md-3 col-10">
+        <!-- Select Location -->
+        <div id="location-select"
+             class="select"
+             role="combobox"
+             aria-haspopup="listbox"
+             aria-expanded="false"
+             aria-controls="location-list">
+          <button type="button" class="select__button" id="location-trigger" aria-label="Select Location">
+            Select Location
+          </button>
+
+          <div class="select__panel" role="dialog" aria-modal="false">
+            <div class="select__header">Select Location</div>
+            <hr class="select__rule">
+            <ul class="select__list" id="location-list" role="listbox" aria-labelledby="location-trigger">
+            </ul>
+          </div>
+        </div>
+      </div>
+        <div class="col-md-2 col-10">
+          <button class="btn btn-secondary w-100">Search</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <main class="container py-4">
+
+    <!-- Browse By Category -->
+    <section id="browse">
+      <div class="d-flex align-items-center justify-content-between mb-3 section-title">
+        <h4 class="mb-0">Browse By Category</h4>
+        <a class="view-all small text-muted text-decoration-none" href="#">View All (10)</a>
+      </div>
+
+      <div class="row g-4" id="categoryContainer" aria-live="polite"></div>
+
+      <!-- Pager -->
+      <nav class="my-3" aria-label="Browse pagination">
+        <ul class="pagination pagination-sm justify-content-center gap-2 mb-0" id="browsePager">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" id="prevBtn" aria-label="Previous" tabindex="-1">«</a>
+          </li>
+          <li class="page-item"><a class="page-link page-num" href="#" data-page="1">1</a></li>
+          <li class="page-item"><a class="page-link page-num" href="#" data-page="2">2</a></li>
+          <li class="page-item"><a class="page-link page-num" href="#" data-page="3">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" id="nextBtn" aria-label="Next">»</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+    <!-- Popular Venue -->
+    <section id="popular" class="mt-5">
+      <div class="d-flex align-items-center justify-content-between mb-3 section-title">
+        <h4 class="mb-0">Popular Venue</h4>
+        <a class="view-all small text-muted text-decoration-none" href="#">View All (1000)</a>
+      </div>
+
+      <div class="row g-4" id="venueContainer" aria-live="polite"></div>
+
+      <!-- Pager -->
+      <nav class="my-3" aria-label="Popular pagination">
+        <ul class="pagination pagination-sm justify-content-center gap-2 mb-0" id="venuePager">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" id="prevVenue" aria-label="Previous" tabindex="-1">«</a>
+          </li>
+          <li class="page-item"><a class="page-link venue-num" href="#" data-page="1">1</a></li>
+          <li class="page-item"><a class="page-link venue-num" href="#" data-page="2">2</a></li>
+          <li class="page-item"><a class="page-link venue-num" href="#" data-page="3">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#" id="nextVenue" aria-label="Next">»</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
+
+  </main>
+
+  </div>
+  <!--Javascript code link-->
+  <script src="nav.js"></script>
+  <section class="container my-4">
+    <div class="dream-box p-4 p-md-5">
+      <div class="row g-4 align-items-center">
+        <!-- Left: Image -->
+        <div class="col-md-4 dream-thumb d-flex justify-content-center justify-content-md-start">
+          <div class="ratio ratio-1x1">
+            <img src="partyimages/homeimages/home14.jpg" alt="Wedding hands with mehndi" class="img-fluid rounded-0">
+          </div>
+        </div>
+
+        <!-- Right: Text + Button -->
+        <div class="col-md-8">
+          <h3 class="fw-bold mb-3">Yours Dreams, Our Dreams…</h3>
+          <p class="fs-4 mb-4">
+            The “best” wedding photography style is subjective and depends on
+            the couple’s preferences.
+          </p>
+          <div class="d-flex justify-content-md-end">
+            <a href="#" class="btn btn-silver">View</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container my-5">
+    <!-- Header -->
+    <div class="d-flex align-items-center justify-content-between section-head mb-3">
+      <div class="d-flex align-items-center justify-content-between mb-3 section-title">
+        <h4 class="mb-0">Featured Videos</h4>
+      </div>
+      <a href="#" class="text-muted text-decoration-none">View All (50)</a>
+    </div>
+
+    <!-- Grid -->
+    <div class="row g-4">
+      <!-- Card -->
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="card video-card h-100">
+          <img class="video-thumb" src="partyimages/homeimages/home15.jpg" alt="Wedding Video">
+          <div class="card-body text-center">
+            <div class="video-title">Wedding Video</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="card video-card h-100">
+          <img class="video-thumb" src="partyimages/homeimages/home16.jpg" alt="Video">
+          <div class="card-body text-center">
+            <div class="video-title">Video</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="card video-card h-100">
+          <img class="video-thumb" src="partyimages/homeimages/home17.jpg" alt="Video">
+          <div class="card-body text-center">
+            <div class="video-title">Video</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="card video-card h-100">
+          <img class="video-thumb" src="partyimages/homeimages/home18.jpg" alt="Video">
+          <div class="card-body text-center">
+            <div class="video-title">Video</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="card video-card h-100">
+          <img class="video-thumb" src="partyimages/homeimages/home19.jpg" alt="Video">
+          <div class="card-body text-center">
+            <div class="video-title">afgg</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="card video-card h-100">
+          <img class="video-thumb" src="partyimages/homeimages/home20.jpg" alt="Video">
+          <div class="card-body text-center">
+            <div class="video-title">ghhhj</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="card video-card h-100">
+          <img class="video-thumb" src="partyimages/homeimages/home21.jpg" alt="Video">
+          <div class="card-body text-center">
+            <div class="video-title">jjjjkk</div>
+          </div>
+        </article>
+      </div>
+
+      <div class="col-12 col-sm-6 col-lg-3">
+        <article class="card video-card h-100">
+          <img class="video-thumb" src="partyimages/homeimages/home22.jpg" alt="Video">
+          <div class="card-body text-center">
+            <div class="video-title">jjkk</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="container py-5" id="reviews">
+    <div class="d-flex align-items-center justify-content-between mb-3 section-title">
+      <h4 class="mb-0">Reviews</h4>
+    </div>
+
+    <div class="review-stage position-relative">
+
+      <!-- Background (muted) cards -->
+      <div class="ghost-card left-ghost d-none d-md-flex align-items-end">
+        <div class="ghost-inner">
+          <div class="ghost-name">John</div>
+          <p class="ghost-text">
+            Aihole is one of the least explored architectural treasures in Karnataka…
+          </p>
+        </div>
+      </div>
+
+      <div class="ghost-card right-ghost d-none d-md-flex align-items-end">
+        <div class="ghost-inner">
+          <div class="ghost-name">Kavala</div>
+          <p class="ghost-text">
+            Aihole is one of the least explored architectural treasures in Karnataka…
+          </p>
+        </div>
+      </div>
+
+      <!-- Center review card -->
+      <article class="review-card mx-auto">
+        <!-- floating avatar -->
+        <img class="avatar"
+          src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=240&auto=format&fit=crop"
+          alt="Reviewer avatar">
+
+        <button class="nav-btn prev" aria-label="Previous">
+          <span aria-hidden="true">‹</span>
+        </button>
+
+        <div class="review-body text-black">
+          <h6 class="reviewer-name fw-bold mb-2 text-center">Celin</h6>
+          <p class="mb-0 review-text text-black-75">
+            Aihole is one of the least explored architectural treasures in Karnataka, offering a wedding
+            experience like no other amidst ancient temples and carvings.
+          </p>
+        </div>
+
+        <button class="nav-btn next" aria-label="Next">
+          <span aria-hidden="true">›</span>
+        </button>
+      </article>
+
+      <!-- Dots -->
+      <div class="dots mt-3 text-center">
+        <button class="dot active" aria-label="Go to slide 1"></button>
+        <button class="dot" aria-label="Go to slide 2"></button>
+        <button class="dot" aria-label="Go to slide 3"></button>
+      </div>
+    </div>
+  </section>
+
+   <!--Footer-->
+<footer class="footer mt-5">
+  <div class="container py-5">
+    <div class="row gy-4 justify-content-between">
+      <!-- Logo & Social -->
+      <div class="col-12 col-md-3">
+        <div class="footer-logo mb-4">
+          <img src="partyimages/navlogo.jpg" alt="One Event Logo" class="footer-logo-img">
+        </div>
+        <h6 class="fw-semibold mb-2">Social Media</h6>
+        <div class="social-icons d-flex gap-3">
+          <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Venues -->
+      <div class="col-6 col-md-2">
+        <h6 class="fw-bold mb-3">Venues</h6>
+        <ul class="list-unstyled footer-links">
+          <li>Chennai</li>
+          <li>Mumbai</li>
+          <li>Dubai</li>
+          <li>Delhi</li>
+          <li>Madurai</li>
+          <li>Kanniyakumari</li>
+        </ul>
+      </div>
+
+      <!-- Suppliers -->
+      <div class="col-6 col-md-2">
+        <h6 class="fw-bold mb-3">Suppliers</h6>
+        <ul class="list-unstyled footer-links">
+          <li>Photographers</li>
+          <li>Decorators</li>
+          <li>Venues Planner</li>
+          <li>Choreographers</li>
+          <li>Designers</li>
+          <li>Makeup Artists</li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-6 col-md-2">
+        <h6 class="fw-bold mb-3">Quick Links</h6>
+        <ul class="list-unstyled footer-links">
+          <li>About Us</li>
+          <li>Careers</li>
+          <li>Contact Us</li>
+          <li>Privacy Policy</li>
+          <li>Terms & Conditions</li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-12 col-md-3">
+        <h6 class="fw-bold mb-3">Newsletter</h6>
+        <p>Subscribe To Get Latest Media Updates</p>
+        <a href="livechat.html" class="btn live-chat">Live Chat</a>
+      </div>
+    </div>
+
+    <div class="footer-bottom text-center mt-6 pt-4">
+  <p class="small text-muted mb-0">
+    Made with love by
+    <a href="#" class="text-decoration-none text-dark fw-medium">thecreation.design</a>
+  </p>
+</div>
+  </div>
+</footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

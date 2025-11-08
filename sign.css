@@ -1,0 +1,274 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #fff;
+    padding: 0;
+    /* tighter vertical padding */
+    border-bottom: 1px solid #ddd;
+    /* separator line */
+}
+
+/* Brand */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+}
+
+.navbar-brand img {
+    height: 40px;
+    width: 120px;
+}
+
+
+/* Nav Links */
+.navbar-nav {
+    align-items: center;
+    margin-top: 4px;
+    /* moves closer to separator line */
+}
+
+.navbar-nav .nav-link {
+    color: #000;
+    font-weight: 500;
+    margin: 0 23px;
+    /* increased gap between items */
+    position: relative;
+    transition: color 0.3s ease;
+    padding-top: 60px;
+    /* closer to bottom line */
+}
+
+.navbar-nav .nav-link.active {
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link.active::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #000;
+}
+
+/* Adjust spacing between logo and menu */
+.navbar-collapse {
+    margin-left: 20px;
+}
+
+@media (max-width: 992px) {
+    .navbar-collapse {
+        margin-left: 0;
+        background: #fff;
+        padding: 10px;
+    }
+
+    .navbar-nav .nav-link {
+        margin: 8px 0;
+    }
+}
+
+:root {
+    --panel: rgba(120, 108, 108, .85);
+    /* right-side panel color */
+}
+
+.hero-wrap {
+    min-height: 86vh;
+    /* adjust page height */
+    margin: 40px auto;
+    /* white margins around the mockup */
+    max-width: 1140px;
+    overflow: hidden;
+}
+
+/* Ensure left image and right signup panel have equal height */
+.hero-wrap {
+    padding: 0 30px;
+    /* adds space inside container on left & right */
+}
+
+.hero-photo,
+.signup-panel {
+    height: 100%;
+    margin: 0;
+}
+
+.hero-photo img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.headline {
+    position: relative;
+    padding: 60px 40px;
+    max-width: 560px;
+}
+
+/* right panel */
+.signup-panel {
+    background: var(--panel);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* centers vertically */
+    padding: 56px 48px;
+    color: #fff;
+    border-radius: 0 !important;
+}
+
+.signup-panel .form-control {
+    height: 50px;
+    border-radius: 4px;
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255, 255, 255, .5);
+}
+
+.signup-panel .form-control::placeholder {
+    color: rgba(255, 255, 255, .8)!important;
+}
+
+.signup-panel .btn {
+    height: 54px;
+    border-radius: 4px;
+}
+
+
+/* bottom centered pager (mock) */
+.pager {
+    position: fixed;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1030;
+    background: #eaeaea;
+    border-radius: 999px;
+    width: 88px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    color: #9aa0a6;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+@media (max-width: 991.98px) {
+    .signup-panel {
+        padding: 36px 24px;
+    }
+
+    .headline {
+        padding: 40px 28px;
+    }
+}
+
+.live-chat {
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    border-radius: .5rem;
+    padding: .45rem 1rem;
+    font-weight: 700;
+}
+
+
+/* Ensure left image and right signup panel have equal height */
+.hero-wrap .row {
+    align-items: stretch;
+}
+
+.hero-photo,
+.signup-panel {
+    height: 100%;
+}
+
+.hero-photo img {
+    height: 100% !important;
+    object-fit: cover;
+}
+
+/* ===== Footer Styling ===== */
+.footer {
+    background-color: #f9f9f9;
+    color: #111;
+    border-top: 1px solid #e5e5e5;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #111;
+}
+
+.footer .text-gradient {
+    background: linear-gradient(45deg, #ff5cc3, #5a5aff);
+    background-clip: text;
+    -webkit-background-clip: text;
+    /* for Safari / Chrome */
+    color: transparent;
+    /* fallback for non-WebKit browsers */
+    -webkit-text-fill-color: transparent;
+    /* ensures gradient text shows properly */
+    display: inline-block;
+    /* ensures clipping works correctly */
+}
+
+.footer-links li {
+    margin-bottom: 6px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.footer-links li:hover {
+    color: #5a5aff;
+}
+
+.social-icons a {
+    color: #111;
+    font-size: 1.1rem;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #5a5aff;
+}
+
+.footer-bottom {
+    border-color: #ddd;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+    .footer .row {
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+.live-chat {
+    background: #fff !important;
+    border: 1px solid #ddd !important;
+    border-radius: .5rem;
+    padding: .45rem 1rem;
+    font-weight: 700;
+}

@@ -1,0 +1,26 @@
+:root { --bg: #fbfbf3; --wa: #25d366; }
+    body { background: var(--bg); }
+    .wa-pill {
+      background: var(--wa); color:#fff; border-radius: .75rem;
+      padding:.4rem .8rem; font-weight:600; display:inline-flex; gap:.5rem; align-items:center;
+    }
+    .nav-link { color:#0b0b0b; font-weight:600; }
+    .nav-link:hover { color:#000; }
+    .download-pill {
+      background: var(--wa)!important; color: #fff !important;; border:0; border-radius:.9rem; padding:.5rem 1rem;
+      font-weight:700;
+    }
+    /* center stage */
+    .stage {
+      min-height: calc(100vh - 88px); /* rough: viewport minus navbar */
+      display:flex; align-items:center; justify-content:center; flex-direction:column; gap:2rem;
+    }
+    .logo-box {
+      background:#fff; border-radius:.25rem; padding:2rem 3rem; box-shadow:0 1px 0 rgba(0,0,0,.06);
+    }
+    .cta {
+      background: var(--wa); color:#fff; border:0; border-radius:1.25rem;
+      padding:.8rem 1.75rem; font-weight:700;
+    }
+    .cta:hover { filter:brightness(.95); color:#fff; }
+    .hint { color:#111; font-weight:600; letter-spacing:.2px; }

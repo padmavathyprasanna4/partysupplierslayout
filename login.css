@@ -1,0 +1,214 @@
+ :root{
+      --panel-dark: #5c5c5c; /* right half */
+      --text-dim: #d8d8d8;
+    }
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff;
+    color: #1d1d1f;
+}
+
+    /* Navbar styling */
+    .navbar {
+      background-color: #fff;
+      padding: 0; /* tighter vertical padding */
+      border-bottom: 1px solid #ddd; /* separator line */
+    }
+
+    /* Brand */
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 0;
+    }
+
+    .navbar-brand img {
+      height: 80px;
+      width: 145px;
+    }
+
+
+    /* Nav Links */
+    .navbar-nav {
+      align-items: center;
+      margin-top: 4px; /* moves closer to separator line */
+    }
+
+    .navbar-nav .nav-link {
+      color: #000;
+      font-weight: 500;
+      margin: 0 23px; /* increased gap between items */
+      position: relative;
+      transition: color 0.3s ease;
+      padding-top: 60px; /* closer to bottom line */
+    }
+
+    .navbar-nav .nav-link.active {
+      font-weight: 600;
+    }
+
+    .navbar-nav .nav-link.active::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #000;
+    }
+
+    .split {
+      min-height: 80vh;
+    }
+
+    /* LEFT: Image + overlay text */
+    .left-pane{
+      background: url("partyimages/Rectangle 6-9.png") center/cover no-repeat;
+      position: relative;
+      filter: grayscale(100%);
+    }
+    .left-pane::after{
+      content:"";
+      position:absolute; 
+      inset:0;
+      background: rgba(0,0,0,.25);
+    }
+    .left-content{
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      padding: 3.5rem 2rem;
+      max-width: 680px;
+    }
+    .left-content h1{
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing:.2px;
+      font-size: clamp(2rem, 4vw + .75rem, 4rem);
+    }
+    .left-content p{
+      margin-top: .75rem;
+      font-weight: 500;
+      font-size: clamp(1rem, 1.1vw + .75rem, 1.25rem);
+      opacity:.9;
+    }
+
+    /* RIGHT: Login panel */
+    .right-pane{
+      background: var(--panel-dark);
+      color: #fff;
+      display: flex;
+      align-items: center;
+    }
+    .login-wrap{
+      width: 100%;
+      max-width: 520px;
+      margin-inline: auto;
+      padding: 3rem 2rem;
+    }
+    .login-wrap h2{
+      font-weight: 800;
+      margin-bottom: .5rem;
+    }
+    .lead-text{
+      color: var(--text-dim);
+      font-size: .95rem;
+      margin-bottom: 1.5rem;
+    }
+    .form-control,
+    .form-check-input{
+      background: transparent;
+      color: #fff;
+      border-color: rgba(255,255,255,.35);
+    }
+    .form-control::placeholder{ color: rgba(255,255,255,.7); }
+    .form-control:focus{
+      background: transparent;
+      border-color: #fff;
+      box-shadow: 0 0 0 .25rem rgba(255,255,255,.15);
+      color: #fff;
+    }
+    .btn-login{
+      background: #fff !important;;
+      color: #000 !important;;
+      border:none;
+      font-weight:600;
+      padding:.8rem 1rem;
+    }
+    .muted-link{
+      color:#bcd2ff;
+      text-decoration: none;
+    }
+    .muted-link:hover{ text-decoration: underline; }
+
+    /* Stack on small screens */
+    @media (max-width: 991.98px){
+      .split{ min-height: auto; }
+      .left-pane{ min-height: 48vh; }
+      .right-pane{ min-height: 52vh; }
+    }
+
+          /* ===== Footer Styling ===== */
+.footer {
+  background-color: #f9f9f9;
+  color: #111;
+  border-top: 1px solid #e5e5e5;
+  font-family: 'Poppins', sans-serif;
+}
+
+.footer-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #111;
+}
+
+.footer .text-gradient {
+  background: linear-gradient(45deg, #ff5cc3, #5a5aff);
+  background-clip: text;
+  -webkit-background-clip: text;   /* for Safari / Chrome */
+  color: transparent;              /* fallback for non-WebKit browsers */
+  -webkit-text-fill-color: transparent; /* ensures gradient text shows properly */
+  display: inline-block;           /* ensures clipping works correctly */
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.footer-links li:hover {
+  color: #5a5aff;
+}
+
+.social-icons a {
+  color: #111;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color: #5a5aff;
+}
+
+.footer-bottom {
+  border-color: #ddd;
+}
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive tweaks */
+@media (max-width: 767px) {
+  .footer .row {
+    text-align: center;
+  }
+  .social-icons {
+    justify-content: center;
+  }
+}
+.live-chat{
+      background: #fff !important; 
+      border:1px solid #ddd!important; 
+      border-radius:.5rem;
+      padding:.45rem 1rem; font-weight:700;
+    }
