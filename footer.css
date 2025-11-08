@@ -1,16 +1,1 @@
- .site-footer{ background:#faf1f1; }
-    .footer-logo{ max-width:130px; 
-        height:auto; }
-    .footer-title{ font-weight:700; }
-    .footer-link{ color:#111; text-decoration:none; }
-    .footer-link:hover{ text-decoration:underline; }
-    .social a{
-      display:inline-flex; align-items:center; justify-content:center;
-      width:28px; height:28px; border-radius:50%; color:#111;
-    }
-    .live-chat{
-      background: #fff !important; 
-      border:1px solid #ddd!important; 
-      border-radius:.5rem;
-      padding:.45rem 1rem; font-weight:700;
-    }
+ 
